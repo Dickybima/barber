@@ -10,8 +10,10 @@
 
 const SHOP = {
   // Nama toko — dipakai di seluruh website, judul tab, pesan WhatsApp, DAN tulisan di logo.
-  name: "Razor & Rose",
-  city: "Bali",           // tulisan melingkar di logo: "BARBERÍA ★ BALI ★"
+  name: "Old Soul Barber Club",
+  // Tulisan di logo: logoTitle = di pita merah, logoSub = tulisan sambung di bawahnya
+  logoTitle: "Old Soul",
+  logoSub: "Barber Club",
   since: "2015",
   tagline: {
     id: "Barbershop bergaya Chicano — fade tajam, slick back klasik, dan cukur pisau tradisional oleh barber berpengalaman. Old school vibes, fresh cuts.",
@@ -25,7 +27,7 @@ const SHOP = {
   // Nomor WhatsApp format internasional TANPA tanda + / spasi (62 = Indonesia)
   whatsapp: "6281234567890",
   phoneDisplay: "+62 812-3456-7890",
-  instagram: "razorandrose.bali",
+  instagram: "oldsoulbarberclub.bali",
   address: "Jl. Sunset Road No. 88, Seminyak, Badung, Bali",
   // Teks pencarian untuk Google Maps (bisa alamat atau nama tempat)
   mapQuery: "Seminyak, Bali",

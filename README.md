@@ -30,10 +30,9 @@ Navbar & footer ada di setiap file HTML — jika menambah/mengubah menu, ubah di
 - Tombol WhatsApp melayang
 
 ## Logo & Nama Toko
-- Logo **Razor & Rose** dibuat otomatis (SVG) oleh `script.js` dan tampil di menu atas, beranda, dan footer.
-- **Ganti nama toko cukup di `data.js` → `SHOP.name`.** Nama di seluruh website, judul tab, pesan WhatsApp, **dan tulisan di logo** ikut berubah. Nama yang panjang otomatis diperkecil agar muat di logo.
-- Tulisan melingkar di logo memakai `SHOP.city` dan `SHOP.since`.
-- Ikon tab browser ada di `favicon.svg` (hanya gambar, tanpa tulisan).
+- Logo **Old Soul Barber Club** (perisai + topi fedora & kumis) dibuat otomatis (SVG) oleh `script.js` dan tampil di menu atas, beranda, dan footer.
+- **Ganti nama toko di `data.js`:** `SHOP.name` (nama di website, judul tab, pesan WhatsApp), `SHOP.logoTitle` (tulisan di pita merah logo), dan `SHOP.logoSub` (tulisan sambung di bawahnya). Tulisan panjang otomatis diperkecil agar muat.
+- Ikon tab browser ada di `favicon.svg` (perisai + topi & kumis, tanpa tulisan).
 
 ## Cara Mengubah Data
 **Cukup edit file `data.js`** — nama toko, nomor WhatsApp, alamat, jam buka, layanan, harga, barber, dan model potongan (`STYLES`) ada di sana.

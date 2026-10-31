@@ -49,7 +49,7 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
 .navbar.scrolled { background: rgba(13,12,11,.95); backdrop-filter: blur(8px); padding: .7rem 0; box-shadow: 0 2px 0 var(--border); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 .logo { font-family: var(--font-gothic); font-size: 1.8rem; display: flex; gap: .5rem; align-items: center; line-height: 1; }
-.logo-emblem { width: 40px; height: 40px; display: inline-block; flex: none; }
+.logo-emblem { width: 36px; height: 46px; display: inline-block; flex: none; }
 .logo-emblem svg, .hero-badge svg, .footer-logo svg { width: 100%; height: 100%; display: block; }
 .nav-links { display: flex; align-items: center; gap: 1.7rem; }
 .nav-links a:not(.btn) { font-family: var(--font-head); text-transform: uppercase; letter-spacing: .1em; font-size: .95rem; position: relative; }
@@ -81,7 +81,7 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
 .hero h1 .accent { color: var(--primary); }
 .hero-sub { max-width: 540px; color: #d4ccc2; font-size: 1.05rem; margin-bottom: 2rem; }
 .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: 2rem; }
-.hero-badge { width: min(100%, 380px); aspect-ratio: 1; justify-self: center; filter: drop-shadow(0 20px 40px rgba(0,0,0,.6)); animation: badgeIn 1s ease both; }
+.hero-badge { width: min(100%, 360px); aspect-ratio: 320 / 356; justify-self: center; filter: drop-shadow(0 20px 40px rgba(0,0,0,.6)); animation: badgeIn 1s ease both; }
 @keyframes badgeIn { from { opacity: 0; transform: scale(.9) rotate(-6deg); } }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; flex-wrap: wrap; }
@@ -208,7 +208,7 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
 
 /* ============ FOOTER ============ */
 .footer { padding: 2rem 0; background: #080707; border-top: 3px solid var(--primary); color: var(--muted); }
-.footer-logo { width: 110px; height: 110px; display: block; }
+.footer-logo { width: 100px; height: 111px; display: block; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: .88rem; }
 
 /* ============ WA FLOAT ============ */

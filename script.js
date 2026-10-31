@@ -51,32 +51,26 @@ function photoFallback(img, photos, box) {
   });
 }
 
-/* ---------- Logo "Razor & Rose" (SVG) ----------
-   Tulisan di logo diambil dari SHOP.name, SHOP.city, dan SHOP.since di data.js,
-   jadi jika nama toko diganti, logo ikut berubah otomatis. */
+/* ---------- Logo "Old Soul Barber Club" (SVG perisai + topi fedora & kumis) ----------
+   Tulisan di logo diambil dari SHOP.logoTitle (pita merah) dan SHOP.logoSub (tulisan sambung)
+   di data.js, jadi jika nama diganti, logo ikut berubah otomatis. */
 const ROSE = `<path d="M-4 6 Q-12 9 -13 2 Q-7 0 -4 6Z M4 6 Q12 9 13 2 Q7 0 4 6Z" fill="#d6ad5e"/><circle r="7.5" fill="#b51f2a"/><path d="M0 .5a1.6 1.6 0 1 1 1.6-1.6M-3-1a3.4 3.4 0 0 1 6.4-1.2M3.8 1a4 4 0 0 1-7 2M-5 2.5a5.6 5.6 0 0 1 2-8M5.6-2a5.8 5.8 0 0 1-2 7" fill="none" stroke="#0d0c0b" stroke-width="1.1" stroke-linecap="round"/>`;
-const RAZOR = `<path d="M-6-70H6Q12-40 6-8H-6Z" fill="#e9e3da" stroke="#0d0c0b" stroke-width="2"/><path d="M-4-66V-12" stroke="#9c958c" stroke-width="2"/><rect x="-7" y="-8" width="14" height="70" rx="6" fill="#d6ad5e" stroke="#0d0c0b" stroke-width="2"/><circle cy="-2" r="3" fill="#0d0c0b"/>`;
-const emblemArt = () => `
-  <g transform="translate(200 190) rotate(-35)">${RAZOR}</g>
-  <g transform="translate(200 190) rotate(35)">${RAZOR}</g>
-  <g transform="translate(200 192) scale(4.2)">${ROSE}</g>`;
-let logoUid = 0;
+const SHIELD = `<path d="M200 30 L330 70 L330 190 Q330 300 200 370 Q70 300 70 190 L70 70 Z" fill="#0d0c0b" stroke="#d6ad5e" stroke-width="4"/><path d="M200 46 L316 82 L316 190 Q316 290 200 352 Q84 290 84 190 L84 82 Z" fill="none" stroke="#d6ad5e" stroke-width="1.2"/>`;
+const HAT_MUSTACHE = `<path d="M95 160 Q200 185 305 160 Q300 175 200 182 Q100 175 95 160Z" fill="#f2ede6"/><path d="M135 162 Q138 95 165 92 Q185 90 200 104 Q215 90 235 92 Q262 95 265 162 Q200 172 135 162Z" fill="#f2ede6"/><path d="M137 145 Q200 158 263 145 L264 160 Q200 170 136 160Z" fill="#b51f2a"/><path d="M200 205 Q185 195 165 200 Q140 207 128 196 Q132 222 162 222 Q186 222 200 212 Q214 222 238 222 Q268 222 272 196 Q260 207 235 200 Q215 195 200 205Z" fill="#f2ede6"/>`;
 function logoSVG(type) {
-  const name = esc(SHOP.name);
-  if (type === "emblem") // versi kecil tanpa tulisan (navbar)
-    return `<svg viewBox="40 40 320 320" aria-hidden="true"><circle cx="200" cy="200" r="150" fill="#0d0c0b" stroke="#d6ad5e" stroke-width="10"/><circle cx="200" cy="200" r="128" fill="none" stroke="#b51f2a" stroke-width="5"/>${emblemArt()}</svg>`;
-  const id = "lg" + logoUid++;
-  const fs = Math.min(44, Math.floor(520 / Math.max(SHOP.name.length, 1))); // nama panjang -> huruf mengecil
-  return `<svg viewBox="0 0 400 400" role="img" aria-label="${name}">
-    <path id="${id}t" d="M70 200A130 130 0 0 1 330 200" fill="none"/>
-    <path id="${id}b" d="M78 215A122 122 0 0 0 322 215" fill="none"/>
-    <circle cx="200" cy="200" r="168" fill="#0d0c0b" stroke="#d6ad5e" stroke-width="4"/>
-    <circle cx="200" cy="200" r="156" fill="none" stroke="#d6ad5e" stroke-width="1.5"/>
-    <circle cx="200" cy="200" r="100" fill="none" stroke="#b51f2a" stroke-width="2"/>
-    <text font-family="Oswald, sans-serif" letter-spacing="4" font-size="22" fill="#d6ad5e"><textPath href="#${id}t" startOffset="50%" text-anchor="middle">★ BARBERÍA ★ ${esc(SHOP.city || "").toUpperCase()} ★</textPath></text>
-    <text font-family="Oswald, sans-serif" letter-spacing="4" font-size="18" fill="#d6ad5e"><textPath href="#${id}b" startOffset="50%" text-anchor="middle">EST. ${esc(SHOP.since)}</textPath></text>
-    ${emblemArt()}
-    <text x="200" y="272" text-anchor="middle" font-family="'Pirata One', serif" font-size="${fs}" fill="#f2ede6" stroke="#0d0c0b" stroke-width="6" paint-order="stroke">${name}</text>
+  const title = SHOP.logoTitle || SHOP.name;
+  const sub = SHOP.logoSub || "";
+  if (type === "emblem") // versi kecil tanpa tulisan (navbar): perisai + topi & kumis
+    return `<svg viewBox="62 22 276 356" aria-hidden="true">${SHIELD}<g transform="translate(200 200) scale(.95) translate(-200 -157)">${HAT_MUSTACHE}</g></svg>`;
+  const fsTitle = Math.min(46, Math.floor(400 / Math.max(title.length, 1)));  // judul panjang -> huruf mengecil
+  const fsSub = Math.min(30, Math.floor(330 / Math.max(sub.length, 1)));
+  return `<svg viewBox="40 22 320 356" role="img" aria-label="${esc(SHOP.name)}">
+    ${SHIELD}
+    <g transform="translate(200 143) scale(.74) translate(-200 -157)">${HAT_MUSTACHE}</g>
+    <path d="M48 205 L352 205 L338 232 L352 260 L48 260 L62 232 Z" fill="#b51f2a" stroke="#d6ad5e" stroke-width="2.5"/>
+    <text x="200" y="${232 + fsTitle * 0.35}" text-anchor="middle" font-family="'Pirata One', serif" font-size="${fsTitle}" fill="#f2ede6">${esc(title)}</text>
+    <text x="200" y="300" text-anchor="middle" font-family="Yesteryear, cursive" font-size="${fsSub}" fill="#d6ad5e">${esc(sub)}</text>
+    <g transform="translate(200 330) scale(1.6)">${ROSE}</g>
   </svg>`;
 }
 
@@ -92,7 +86,6 @@ function render() {
   $("#hamburger")?.setAttribute("aria-label", ui("ui.menu"));
 
   // logo & data toko
-  logoUid = 0;
   document.querySelectorAll("[data-logo]").forEach((el) => (el.innerHTML = logoSVG(el.dataset.logo)));
   setText("[data-shop-name]", SHOP.name);
   setText("[data-since]", SHOP.since);
