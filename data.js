@@ -18,7 +18,7 @@ const SHOP = {
   // Teks pencarian untuk Google Maps (bisa alamat atau nama tempat)
   mapQuery: "Monas, Jakarta Pusat",
 
-  // Jam buka (dipakai juga untuk pilihan jam booking). Kosongkan open/close jika tutup.
+  // Jam buka. Kosongkan open/close jika tutup.
   hours: [
     { day: "Senin",  open: "10:00", close: "21:00" },
     { day: "Selasa", open: "10:00", close: "21:00" },
@@ -28,7 +28,6 @@ const SHOP = {
     { day: "Sabtu",  open: "09:00", close: "22:00" },
     { day: "Minggu", open: "09:00", close: "22:00" },
   ],
-  bookingIntervalMinutes: 30,
 };
 
 const SERVICES = [

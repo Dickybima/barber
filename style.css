@@ -115,20 +115,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .testi-card p { font-style: italic; color: #ddd6ca; margin-bottom: 1rem; }
 .testi-card cite { font-style: normal; font-weight: 600; color: var(--gold); }
 
-/* ============ BOOKING ============ */
-.booking-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: start; }
-.booking-info h2 { margin-bottom: 1rem; }
-.check-list { list-style: none; margin-top: 1.5rem; }
-.check-list li { padding: .45rem 0 .45rem 1.9rem; position: relative; }
-.check-list li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
-.booking-form { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; display: grid; gap: 1rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.booking-form label { display: grid; gap: .4rem; font-size: .88rem; font-weight: 500; }
-.booking-form input, .booking-form select, .booking-form textarea { width: 100%; padding: .8rem 1rem; background: #151515; border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-family: inherit; font-size: .95rem; }
-.booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus { outline: none; border-color: var(--gold); }
-.booking-form input[type="date"] { color-scheme: dark; }
-.form-error { color: #ff7a6b; font-size: .88rem; min-height: 1em; }
-
 /* ============ KONTAK ============ */
 .contact-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; }
 .contact-info h2 { margin-bottom: 1.5rem; }
@@ -161,7 +147,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
-  .booking-wrap, .contact-wrap { grid-template-columns: 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .hamburger { display: block; }
@@ -169,7 +155,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
   .nav-links.open { right: 0; }
   .hamburger { position: relative; z-index: 110; }
   .section { padding: 70px 0; }
-  .form-row { grid-template-columns: 1fr; }
   .hero-stats { gap: 1.5rem; }
   .promo-inner { text-align: center; justify-content: center; }
 }

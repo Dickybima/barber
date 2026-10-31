@@ -15,6 +15,8 @@ $("[data-phone-link]").href = "tel:+" + SHOP.whatsapp;
 $("[data-instagram]").textContent = "@" + SHOP.instagram;
 $("[data-instagram-link]").href = "https://instagram.com/" + SHOP.instagram;
 $("#waFloat").href = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("Halo " + SHOP.name + ", saya mau tanya.")}`;
+document.querySelectorAll("[data-wa]").forEach((a) =>
+  (a.href = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("Halo " + SHOP.name + ", saya mau booking potong rambut.")}`));
 $("#mapFrame").src = "https://maps.google.com/maps?q=" + encodeURIComponent(SHOP.mapQuery) + "&output=embed";
 $("#year").textContent = new Date().getFullYear();
 document.title = SHOP.name + " Barbershop";
@@ -82,82 +84,6 @@ $("#hoursTable").innerHTML = SHOP.hours.map((h, i) => `
     <td>${h.open ? `${esc(h.open)} – ${esc(h.close)}` : "Tutup"}</td>
   </tr>`).join("");
 
-/* ---------- Form booking ---------- */
-const selService = $("#selectService");
-const selBarber = $("#selectBarber");
-const selTime = $("#selectTime");
-const inputDate = $("#inputDate");
-
-selService.innerHTML = `<option value="">-- Pilih layanan --</option>` +
-  SERVICES.map((s) => `<option value="${esc(s.name)}">${esc(s.name)} — ${rupiah(s.price)}</option>`).join("");
-selBarber.innerHTML = `<option value="Bebas (siapa saja)">Bebas (siapa saja)</option>` +
-  BARBERS.map((b) => `<option value="${esc(b.name)}">${esc(b.name)}</option>`).join("");
-
-const pad = (n) => String(n).padStart(2, "0");
-const toISODate = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-const toMin = (hhmm) => { const [h, m] = hhmm.split(":").map(Number); return h * 60 + m; };
-
-inputDate.min = toISODate(new Date());
-inputDate.value = toISODate(new Date());
-
-function refreshTimes() {
-  const val = inputDate.value;
-  selTime.innerHTML = "";
-  if (!val) { selTime.innerHTML = `<option value="">Pilih tanggal dulu</option>`; return; }
-  const date = new Date(val + "T00:00:00");
-  const hours = SHOP.hours[(date.getDay() + 6) % 7];
-  if (!hours.open) { selTime.innerHTML = `<option value="">Tutup di hari ini</option>`; return; }
-
-  const now = new Date();
-  const isToday = val === toISODate(now);
-  const nowMin = now.getHours() * 60 + now.getMinutes();
-  const slots = [];
-  // slot terakhir 30 menit sebelum tutup
-  for (let t = toMin(hours.open); t <= toMin(hours.close) - 30; t += SHOP.bookingIntervalMinutes) {
-    if (isToday && t <= nowMin + 30) continue;
-    slots.push(`${pad(Math.floor(t / 60))}:${pad(t % 60)}`);
-  }
-  selTime.innerHTML = slots.length
-    ? `<option value="">-- Pilih jam --</option>` + slots.map((s) => `<option>${s}</option>`).join("")
-    : `<option value="">Slot hari ini sudah habis</option>`;
-}
-inputDate.addEventListener("change", refreshTimes);
-refreshTimes();
-
-$("#bookingForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const f = new FormData(e.target);
-  const data = Object.fromEntries(f.entries());
-  const err = $("#formError");
-
-  if (!data.nama.trim() || !data.hp.trim() || !data.layanan || !data.tanggal || !data.jam) {
-    err.textContent = "Mohon lengkapi nama, nomor WhatsApp, layanan, tanggal, dan jam.";
-    return;
-  }
-  if (!/^[0-9+\-\s]{9,16}$/.test(data.hp.trim())) {
-    err.textContent = "Nomor WhatsApp tidak valid.";
-    return;
-  }
-  err.textContent = "";
-
-  const tgl = new Date(data.tanggal + "T00:00:00").toLocaleDateString("id-ID", {
-    weekday: "long", day: "numeric", month: "long", year: "numeric",
-  });
-  const msg =
-`Halo ${SHOP.name}, saya mau booking:
-
-Nama: ${data.nama.trim()}
-No. HP: ${data.hp.trim()}
-Layanan: ${data.layanan}
-Barber: ${data.barber}
-Tanggal: ${tgl}
-Jam: ${data.jam}${data.catatan.trim() ? `\nCatatan: ${data.catatan.trim()}` : ""}
-
-Mohon konfirmasinya, terima kasih!`;
-
-  window.open(`https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
-});
-
 /* ---------- Navbar ---------- */
 const navbar = $("#navbar");
 const navLinks = $("#navLinks");
@@ -176,5 +102,5 @@ navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
 }, { threshold: 0.12 });
-document.querySelectorAll(".section-head, .service-card, .barber-card, .gallery-item, .testi-card, .booking-form, .contact-info, .map")
+document.querySelectorAll(".section-head, .service-card, .barber-card, .gallery-item, .testi-card, .contact-info, .map")
   .forEach((el) => { el.classList.add("reveal"); io.observe(el); });

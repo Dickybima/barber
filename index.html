@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gentleman's Cut Barbershop</title>
-  <meta name="description" content="Barbershop modern dengan barber berpengalaman. Booking potong rambut online via WhatsApp." />
+  <meta name="description" content="Barbershop modern dengan barber berpengalaman. Booking potong rambut via WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -23,7 +23,7 @@
         <a href="#galeri">Galeri</a>
         <a href="#testimoni">Testimoni</a>
         <a href="#kontak">Kontak</a>
-        <a href="#booking" class="btn btn-gold btn-sm">Booking</a>
+        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-gold btn-sm">Booking</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Buka menu">
         <span></span><span></span><span></span>
@@ -39,7 +39,7 @@
       <h1>Tampil Rapi,<br /><span class="gold">Percaya Diri</span> Setiap Hari</h1>
       <p class="hero-sub" data-tagline>Potongan presisi oleh barber berpengalaman, suasana nyaman, dan harga bersahabat.</p>
       <div class="hero-actions">
-        <a href="#booking" class="btn btn-gold">Booking Sekarang</a>
+        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-gold">Booking Sekarang</a>
         <a href="#layanan" class="btn btn-outline">Lihat Layanan</a>
       </div>
       <div class="hero-stats">
@@ -69,7 +69,7 @@
         <h3>🎉 Promo Bulan Ini</h3>
         <p data-promo>Diskon 20% untuk pelajar &amp; mahasiswa setiap Senin–Kamis. Tunjukkan kartu pelajar!</p>
       </div>
-      <a href="#booking" class="btn btn-dark">Ambil Promo</a>
+      <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-dark">Ambil Promo</a>
     </div>
   </section>
 
@@ -79,7 +79,7 @@
       <div class="section-head">
         <p class="eyebrow">Tim Kami</p>
         <h2>Kenali Barber Kami</h2>
-        <p class="muted">Pilih barber favoritmu saat booking.</p>
+        <p class="muted">Sebutkan barber favoritmu saat booking via WhatsApp.</p>
       </div>
       <div class="barbers-grid" id="barbersGrid"></div>
     </div>
@@ -104,53 +104,6 @@
         <h2>Testimoni Pelanggan</h2>
       </div>
       <div class="testi-grid" id="testiGrid"></div>
-    </div>
-  </section>
-
-  <!-- ========== BOOKING ========== -->
-  <section class="section" id="booking">
-    <div class="container booking-wrap">
-      <div class="booking-info">
-        <p class="eyebrow">Reservasi</p>
-        <h2>Booking Jadwal</h2>
-        <p class="muted">Isi form di samping, lalu kamu akan diarahkan ke WhatsApp kami untuk konfirmasi jadwal. Tanpa antre!</p>
-        <ul class="check-list">
-          <li>Konfirmasi cepat via WhatsApp</li>
-          <li>Bebas pilih barber favorit</li>
-          <li>Datang sesuai jam, tanpa menunggu lama</li>
-        </ul>
-      </div>
-      <form class="booking-form" id="bookingForm" novalidate>
-        <div class="form-row">
-          <label>Nama Lengkap
-            <input type="text" name="nama" placeholder="contoh: Budi Santoso" required />
-          </label>
-          <label>No. WhatsApp
-            <input type="tel" name="hp" placeholder="08xxxxxxxxxx" required />
-          </label>
-        </div>
-        <div class="form-row">
-          <label>Layanan
-            <select name="layanan" id="selectService" required></select>
-          </label>
-          <label>Barber
-            <select name="barber" id="selectBarber"></select>
-          </label>
-        </div>
-        <div class="form-row">
-          <label>Tanggal
-            <input type="date" name="tanggal" id="inputDate" required />
-          </label>
-          <label>Jam
-            <select name="jam" id="selectTime" required></select>
-          </label>
-        </div>
-        <label>Catatan (opsional)
-          <textarea name="catatan" rows="3" placeholder="contoh: mau model mid fade, sisi kanan dibuat line"></textarea>
-        </label>
-        <p class="form-error" id="formError"></p>
-        <button type="submit" class="btn btn-gold btn-block">Kirim Booking via WhatsApp</button>
-      </form>
     </div>
   </section>
 

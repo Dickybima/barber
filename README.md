@@ -1,6 +1,6 @@
 # 💈 Website Barbershop
 
-Website landing page barbershop yang responsif (HP & desktop), dengan booking via WhatsApp.
+Website landing page barbershop yang responsif (HP & desktop). Tombol booking langsung membuka chat WhatsApp.
 
 ## Fitur
 - Beranda (hero) dengan tombol booking
@@ -9,8 +9,7 @@ Website landing page barbershop yang responsif (HP & desktop), dengan booking vi
 - Profil barber
 - Galeri hasil potongan (klik untuk memperbesar)
 - Testimoni pelanggan
-- Form booking → otomatis membuka WhatsApp dengan pesan booking lengkap
-- Pilihan jam booking otomatis sesuai jam buka
+- Tombol booking langsung membuka chat WhatsApp
 - Lokasi Google Maps + tabel jam buka (hari ini ditandai)
 - Tombol WhatsApp melayang
 
