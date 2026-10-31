@@ -21,15 +21,29 @@ $("#mapFrame").src = "https://maps.google.com/maps?q=" + encodeURIComponent(SHOP
 $("#year").textContent = new Date().getFullYear();
 document.title = SHOP.name + " Barbershop";
 
+/* ---------- Ikon layanan (SVG garis) ---------- */
+const ICONS = {
+  scissors: '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/>',
+  crown: '<path d="M2 6l3.5 11h13L22 6l-5.5 5L12 4l-4.5 7z"/><path d="M5.5 20h13"/>',
+  razor: '<rect x="4" y="3" width="16" height="5" rx="1.5"/><path d="M7 5.5h10"/><path d="M12 8v8"/><rect x="10.5" y="16" width="3" height="5.5" rx="1"/>',
+  palette: '<circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/>',
+  zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  kid: '<circle cx="12" cy="13" r="8"/><path d="M12 5c0-1.5 1-2.5 2.5-2.5"/><path d="M9 12h.01M15 12h.01"/><path d="M9.5 16a3.5 3.5 0 0 0 5 0"/>',
+  comb: '<rect x="3" y="4" width="18" height="5" rx="1.5"/><path d="M5 9v10M8 9v8M11 9v10M14 9v8M17 9v10M20 9v6"/>',
+  spray: '<rect x="7" y="9" width="8" height="13" rx="2"/><path d="M9 9V6h4v3"/><path d="M13 6h3"/><path d="M19 3v.01M21 5v.01M19 7v.01"/>',
+};
+const icon = (name) =>
+  `<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ICONS.scissors}</svg>`;
+
 /* ---------- Layanan ---------- */
 $("#servicesGrid").innerHTML = SERVICES.map((s) => `
   <article class="service-card">
-    <div class="service-icon">${s.icon}</div>
+    <div class="service-icon">${icon(s.icon)}</div>
     <h3>${esc(s.name)}</h3>
     <p class="muted">${esc(s.desc)}</p>
     <div class="service-meta">
       <span class="price">${rupiah(s.price)}</span>
-      <span class="duration">⏱ ${esc(s.duration)}</span>
+      <span class="duration"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>${esc(s.duration)}</span>
     </div>
   </article>`).join("");
 

@@ -72,12 +72,13 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: .3s; display: flex; flex-direction: column; }
 .service-card:hover { border-color: var(--gold); transform: translateY(-6px); }
-.service-icon { font-size: 2rem; width: 60px; height: 60px; display: grid; place-items: center; background: rgba(201,162,75,.12); border-radius: 50%; margin-bottom: 1rem; }
+.service-icon { width: 64px; height: 64px; display: grid; place-items: center; color: var(--gold); background: linear-gradient(145deg, rgba(201,162,75,.18), rgba(201,162,75,.04)); border: 1px solid rgba(201,162,75,.35); border-radius: 18px; margin-bottom: 1.2rem; transition: .35s; }
+.service-card:hover .service-icon { background: var(--gold); color: #111; transform: rotate(-6deg) scale(1.05); box-shadow: 0 8px 24px rgba(201,162,75,.35); }
 .service-card h3 { font-size: 1.3rem; margin-bottom: .4rem; }
 .service-card p { font-size: .92rem; flex: 1; }
 .service-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px dashed var(--border); }
 .price { font-size: 1.25rem; font-weight: 600; color: var(--gold); }
-.duration { font-size: .85rem; color: var(--muted); }
+.duration { font-size: .85rem; color: var(--muted); display: inline-flex; align-items: center; gap: .35rem; }
 
 /* ============ PROMO ============ */
 .promo { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #111; padding: 2.2rem 0; }

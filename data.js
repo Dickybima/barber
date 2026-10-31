@@ -30,13 +30,14 @@ const SHOP = {
   ],
 };
 
+// icon pilihan: scissors, crown, razor, palette, zap, kid, comb, spray
 const SERVICES = [
-  { icon: "✂️", name: "Haircut",          price: 50000,  duration: "45 menit", desc: "Potong rambut + konsultasi gaya, cuci, dan styling." },
-  { icon: "👑", name: "Premium Haircut",  price: 85000,  duration: "60 menit", desc: "Haircut + hot towel, pijat kepala, dan masker wajah." },
-  { icon: "🪒", name: "Shaving",          price: 35000,  duration: "30 menit", desc: "Cukur jenggot/kumis klasik dengan hot towel." },
-  { icon: "🎨", name: "Hair Coloring",    price: 150000, duration: "90 menit", desc: "Pewarnaan rambut dengan produk aman & tahan lama." },
-  { icon: "⚡", name: "Hair Tattoo",      price: 30000,  duration: "20 menit", desc: "Desain garis/pola unik di sisi rambut." },
-  { icon: "🧒", name: "Kids Haircut",     price: 40000,  duration: "30 menit", desc: "Potong rambut anak (di bawah 12 tahun)." },
+  { icon: "scissors", name: "Haircut",          price: 50000,  duration: "45 menit", desc: "Potong rambut + konsultasi gaya, cuci, dan styling." },
+  { icon: "crown", name: "Premium Haircut",  price: 85000,  duration: "60 menit", desc: "Haircut + hot towel, pijat kepala, dan masker wajah." },
+  { icon: "razor", name: "Shaving",          price: 35000,  duration: "30 menit", desc: "Cukur jenggot/kumis klasik dengan hot towel." },
+  { icon: "palette", name: "Hair Coloring",    price: 150000, duration: "90 menit", desc: "Pewarnaan rambut dengan produk aman & tahan lama." },
+  { icon: "zap", name: "Hair Tattoo",      price: 30000,  duration: "20 menit", desc: "Desain garis/pola unik di sisi rambut." },
+  { icon: "kid", name: "Kids Haircut",     price: 40000,  duration: "30 menit", desc: "Potong rambut anak (di bawah 12 tahun)." },
 ];
 
 const BARBERS = [
