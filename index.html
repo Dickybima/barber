@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gentleman's Cut Barbershop</title>
+  <title>Razor &amp; Rose Barbershop</title>
   <meta name="description" content="Barbershop bergaya Chicano di Bali — fade tajam, slick back klasik, dan cukur pisau tradisional. Booking potong rambut via WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Pirata+One&family=Poppins:wght@300;400;500;600&family=Yesteryear&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page="index">
@@ -15,7 +16,7 @@
   <!-- ========== NAVBAR ========== -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="index.html" class="logo"><span class="logo-icon" aria-hidden="true"></span> <span data-shop-name>Gentleman's Cut</span></a>
+      <a href="index.html" class="logo"><span class="logo-emblem" data-logo="emblem"></span> <span data-shop-name>Razor &amp; Rose</span></a>
       <nav class="nav-links" id="navLinks">
         <a href="index.html" class="active" aria-current="page" data-i18n="nav.home">Beranda</a>
         <a href="layanan.html" data-i18n="nav.services">Layanan</a>
@@ -36,7 +37,8 @@
   <!-- ========== HERO ========== -->
   <section class="hero" id="beranda">
     <div class="hero-overlay"></div>
-    <div class="container hero-content">
+    <div class="container hero-content hero-grid">
+      <div class="hero-text">
       <p class="eyebrow">Est. <span data-since>2015</span></p>
       <h1>Fresh Cuts,<br /><span class="accent">Old School</span> Soul</h1>
       <p class="hero-sub" data-tagline>Potongan presisi oleh barber berpengalaman, suasana nyaman, dan harga bersahabat.</p>
@@ -49,6 +51,8 @@
         <div><strong>15rb+</strong><span data-i18n="hero.clients">Pelanggan</span></div>
         <div><strong>4.9★</strong><span data-i18n="hero.rating">Rating Google</span></div>
       </div>
+      </div>
+      <div class="hero-badge" data-logo="badge"></div>
     </div>
   </section>
   <!-- ========== FOTO MODEL BERJALAN ========== -->
@@ -74,8 +78,8 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container footer-inner">
-      <a href="index.html" class="logo"><span class="logo-icon" aria-hidden="true"></span> <span data-shop-name>Gentleman's Cut</span></a>
-      <p>&copy; <span id="year"></span> <span data-shop-name>Gentleman's Cut</span>. <span data-i18n="footer.rights">Semua hak dilindungi.</span></p>
+      <a href="index.html" class="footer-logo" data-logo="badge" aria-label="Razor &amp; Rose"></a>
+      <p>&copy; <span id="year"></span> <span data-shop-name>Razor &amp; Rose</span>. <span data-i18n="footer.rights">Semua hak dilindungi.</span></p>
     </div>
   </footer>
 

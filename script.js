@@ -51,6 +51,35 @@ function photoFallback(img, photos, box) {
   });
 }
 
+/* ---------- Logo "Razor & Rose" (SVG) ----------
+   Tulisan di logo diambil dari SHOP.name, SHOP.city, dan SHOP.since di data.js,
+   jadi jika nama toko diganti, logo ikut berubah otomatis. */
+const ROSE = `<path d="M-4 6 Q-12 9 -13 2 Q-7 0 -4 6Z M4 6 Q12 9 13 2 Q7 0 4 6Z" fill="#d6ad5e"/><circle r="7.5" fill="#b51f2a"/><path d="M0 .5a1.6 1.6 0 1 1 1.6-1.6M-3-1a3.4 3.4 0 0 1 6.4-1.2M3.8 1a4 4 0 0 1-7 2M-5 2.5a5.6 5.6 0 0 1 2-8M5.6-2a5.8 5.8 0 0 1-2 7" fill="none" stroke="#0d0c0b" stroke-width="1.1" stroke-linecap="round"/>`;
+const RAZOR = `<path d="M-6-70H6Q12-40 6-8H-6Z" fill="#e9e3da" stroke="#0d0c0b" stroke-width="2"/><path d="M-4-66V-12" stroke="#9c958c" stroke-width="2"/><rect x="-7" y="-8" width="14" height="70" rx="6" fill="#d6ad5e" stroke="#0d0c0b" stroke-width="2"/><circle cy="-2" r="3" fill="#0d0c0b"/>`;
+const emblemArt = () => `
+  <g transform="translate(200 190) rotate(-35)">${RAZOR}</g>
+  <g transform="translate(200 190) rotate(35)">${RAZOR}</g>
+  <g transform="translate(200 192) scale(4.2)">${ROSE}</g>`;
+let logoUid = 0;
+function logoSVG(type) {
+  const name = esc(SHOP.name);
+  if (type === "emblem") // versi kecil tanpa tulisan (navbar)
+    return `<svg viewBox="40 40 320 320" aria-hidden="true"><circle cx="200" cy="200" r="150" fill="#0d0c0b" stroke="#d6ad5e" stroke-width="10"/><circle cx="200" cy="200" r="128" fill="none" stroke="#b51f2a" stroke-width="5"/>${emblemArt()}</svg>`;
+  const id = "lg" + logoUid++;
+  const fs = Math.min(44, Math.floor(520 / Math.max(SHOP.name.length, 1))); // nama panjang -> huruf mengecil
+  return `<svg viewBox="0 0 400 400" role="img" aria-label="${name}">
+    <path id="${id}t" d="M70 200A130 130 0 0 1 330 200" fill="none"/>
+    <path id="${id}b" d="M78 215A122 122 0 0 0 322 215" fill="none"/>
+    <circle cx="200" cy="200" r="168" fill="#0d0c0b" stroke="#d6ad5e" stroke-width="4"/>
+    <circle cx="200" cy="200" r="156" fill="none" stroke="#d6ad5e" stroke-width="1.5"/>
+    <circle cx="200" cy="200" r="100" fill="none" stroke="#b51f2a" stroke-width="2"/>
+    <text font-family="Oswald, sans-serif" letter-spacing="4" font-size="22" fill="#d6ad5e"><textPath href="#${id}t" startOffset="50%" text-anchor="middle">★ BARBERÍA ★ ${esc(SHOP.city || "").toUpperCase()} ★</textPath></text>
+    <text font-family="Oswald, sans-serif" letter-spacing="4" font-size="18" fill="#d6ad5e"><textPath href="#${id}b" startOffset="50%" text-anchor="middle">EST. ${esc(SHOP.since)}</textPath></text>
+    ${emblemArt()}
+    <text x="200" y="272" text-anchor="middle" font-family="'Pirata One', serif" font-size="${fs}" fill="#f2ede6" stroke="#0d0c0b" stroke-width="6" paint-order="stroke">${name}</text>
+  </svg>`;
+}
+
 /* ---------- Render semua teks sesuai bahasa ---------- */
 function render() {
   document.documentElement.lang = LANG;
@@ -62,7 +91,9 @@ function render() {
   document.querySelectorAll("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", ui(el.dataset.i18nAria)));
   $("#hamburger")?.setAttribute("aria-label", ui("ui.menu"));
 
-  // data toko
+  // logo & data toko
+  logoUid = 0;
+  document.querySelectorAll("[data-logo]").forEach((el) => (el.innerHTML = logoSVG(el.dataset.logo)));
   setText("[data-shop-name]", SHOP.name);
   setText("[data-since]", SHOP.since);
   setText("[data-tagline]", tr(SHOP.tagline));

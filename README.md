@@ -29,6 +29,12 @@ Navbar & footer ada di setiap file HTML — jika menambah/mengubah menu, ubah di
 - Lokasi Google Maps + tabel jam buka (hari ini ditandai)
 - Tombol WhatsApp melayang
 
+## Logo & Nama Toko
+- Logo **Razor & Rose** dibuat otomatis (SVG) oleh `script.js` dan tampil di menu atas, beranda, dan footer.
+- **Ganti nama toko cukup di `data.js` → `SHOP.name`.** Nama di seluruh website, judul tab, pesan WhatsApp, **dan tulisan di logo** ikut berubah. Nama yang panjang otomatis diperkecil agar muat di logo.
+- Tulisan melingkar di logo memakai `SHOP.city` dan `SHOP.since`.
+- Ikon tab browser ada di `favicon.svg` (hanya gambar, tanpa tulisan).
+
 ## Cara Mengubah Data
 **Cukup edit file `data.js`** — nama toko, nomor WhatsApp, alamat, jam buka, layanan, harga, barber, dan model potongan (`STYLES`) ada di sana.
 
