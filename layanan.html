@@ -10,20 +10,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Pirata+One&family=Poppins:wght@300;400;500;600&family=Yesteryear&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="layanan">
 
   <!-- ========== NAVBAR ========== -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="logo"><span class="logo-icon" aria-hidden="true"></span> <span data-shop-name>Gentleman's Cut</span></a>
       <nav class="nav-links" id="navLinks">
-        <a href="index.html">Beranda</a>
-        <a href="layanan.html" class="active" aria-current="page">Layanan</a>
-        <a href="barber.html">Barber</a>
-        <a href="model.html">Model</a>
-        <a href="kontak.html">Kontak</a>
-        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-primary btn-sm">Booking</a>
+        <a href="index.html" data-i18n="nav.home">Beranda</a>
+        <a href="layanan.html" class="active" aria-current="page" data-i18n="nav.services">Layanan</a>
+        <a href="barber.html" data-i18n="nav.barbers">Barber</a>
+        <a href="model.html" data-i18n="nav.styles">Model</a>
+        <a href="kontak.html" data-i18n="nav.contact">Kontak</a>
+        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-i18n="nav.book">Booking</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Bahasa / Language">
+        <button type="button" data-lang="id">ID</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Buka menu">
         <span></span><span></span><span></span>
       </button>
@@ -34,8 +38,8 @@
   <section class="page-banner">
     <div class="container page-banner-content">
       <p class="eyebrow">Precios</p>
-      <h1>Layanan &amp; Harga</h1>
-      <p class="breadcrumb"><a href="index.html">Beranda</a> <span>/</span> Layanan</p>
+      <h1 data-i18n="services.title">Layanan &amp; Harga</h1>
+      <p class="breadcrumb"><a href="index.html" data-i18n="nav.home">Beranda</a> <span>/</span> <span data-i18n="nav.services">Layanan</span></p>
     </div>
   </section>
 
@@ -43,7 +47,7 @@
   <section class="section" id="layanan">
     <div class="container">
       <div class="section-head">
-        <p class="muted">Semua layanan sudah termasuk konsultasi gaya dan styling produk premium.</p>
+        <p class="muted" data-i18n="services.note">Semua layanan sudah termasuk konsultasi gaya dan styling produk premium.</p>
       </div>
       <div class="services-grid" id="servicesGrid"></div>
     </div>
@@ -52,17 +56,17 @@
   <section class="promo">
     <div class="container promo-inner">
       <div>
-        <h3>Promo Bulan Ini</h3>
+        <h3 data-i18n="promo.title">Promo Bulan Ini</h3>
         <p data-promo>Diskon 20% untuk pelajar &amp; mahasiswa setiap Senin–Kamis. Tunjukkan kartu pelajar!</p>
       </div>
-      <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-light">Ambil Promo</a>
+      <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-light" data-i18n="promo.cta">Ambil Promo</a>
     </div>
   </section>
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container footer-inner">
       <a href="index.html" class="logo"><span class="logo-icon" aria-hidden="true"></span> <span data-shop-name>Gentleman's Cut</span></a>
-      <p>&copy; <span id="year"></span> <span data-shop-name>Gentleman's Cut</span>. Semua hak dilindungi.</p>
+      <p>&copy; <span id="year"></span> <span data-shop-name>Gentleman's Cut</span>. <span data-i18n="footer.rights">Semua hak dilindungi.</span></p>
     </div>
   </footer>
 
@@ -72,6 +76,7 @@
   </a>
 
   <script src="data.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

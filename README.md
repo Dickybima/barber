@@ -13,6 +13,12 @@ Website barbershop multi-halaman yang responsif (HP & desktop). Tombol booking l
 
 Navbar & footer ada di setiap file HTML — jika menambah/mengubah menu, ubah di kelima file.
 
+## Dua Bahasa (Indonesia & Inggris)
+- Tombol **ID | EN** di menu atas. Pilihan pengunjung diingat browser.
+- Pengunjung baru otomatis melihat bahasa Indonesia jika browsernya berbahasa Indonesia, selain itu bahasa Inggris.
+- Teks data (tagline, promo, deskripsi layanan & model) diterjemahkan di `data.js` dengan format `{ id: "...", en: "..." }`.
+- Teks tetap (menu, judul, tombol, footer) diterjemahkan di `i18n.js`. Di HTML, elemen ber-atribut `data-i18n="kunci"` diisi otomatis dari file ini.
+
 ## Fitur
 - Beranda (hero) dengan tombol booking
 - Daftar layanan & harga

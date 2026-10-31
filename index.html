@@ -10,20 +10,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Pirata+One&family=Poppins:wght@300;400;500;600&family=Yesteryear&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="index">
 
   <!-- ========== NAVBAR ========== -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="logo"><span class="logo-icon" aria-hidden="true"></span> <span data-shop-name>Gentleman's Cut</span></a>
       <nav class="nav-links" id="navLinks">
-        <a href="index.html" class="active" aria-current="page">Beranda</a>
-        <a href="layanan.html">Layanan</a>
-        <a href="barber.html">Barber</a>
-        <a href="model.html">Model</a>
-        <a href="kontak.html">Kontak</a>
-        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-primary btn-sm">Booking</a>
+        <a href="index.html" class="active" aria-current="page" data-i18n="nav.home">Beranda</a>
+        <a href="layanan.html" data-i18n="nav.services">Layanan</a>
+        <a href="barber.html" data-i18n="nav.barbers">Barber</a>
+        <a href="model.html" data-i18n="nav.styles">Model</a>
+        <a href="kontak.html" data-i18n="nav.contact">Kontak</a>
+        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-i18n="nav.book">Booking</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Bahasa / Language">
+        <button type="button" data-lang="id">ID</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Buka menu">
         <span></span><span></span><span></span>
       </button>
@@ -38,13 +42,13 @@
       <h1>Fresh Cuts,<br /><span class="accent">Old School</span> Soul</h1>
       <p class="hero-sub" data-tagline>Potongan presisi oleh barber berpengalaman, suasana nyaman, dan harga bersahabat.</p>
       <div class="hero-actions">
-        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-primary">Booking Sekarang</a>
-        <a href="layanan.html" class="btn btn-outline">Lihat Layanan</a>
+        <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero.book">Booking Sekarang</a>
+        <a href="layanan.html" class="btn btn-outline" data-i18n="hero.services">Lihat Layanan</a>
       </div>
       <div class="hero-stats">
-        <div><strong>10+</strong><span>Tahun Berdiri</span></div>
-        <div><strong>15rb+</strong><span>Pelanggan</span></div>
-        <div><strong>4.9★</strong><span>Rating Google</span></div>
+        <div><strong>10+</strong><span data-i18n="hero.years">Tahun Berdiri</span></div>
+        <div><strong>15rb+</strong><span data-i18n="hero.clients">Pelanggan</span></div>
+        <div><strong>4.9★</strong><span data-i18n="hero.rating">Rating Google</span></div>
       </div>
     </div>
   </section>
@@ -52,10 +56,10 @@
   <section class="promo">
     <div class="container promo-inner">
       <div>
-        <h3>Promo Bulan Ini</h3>
+        <h3 data-i18n="promo.title">Promo Bulan Ini</h3>
         <p data-promo>Diskon 20% untuk pelajar &amp; mahasiswa setiap Senin–Kamis. Tunjukkan kartu pelajar!</p>
       </div>
-      <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-light">Ambil Promo</a>
+      <a href="#" data-wa target="_blank" rel="noopener" class="btn btn-light" data-i18n="promo.cta">Ambil Promo</a>
     </div>
   </section>
   <!-- ========== JELAJAHI ========== -->
@@ -63,13 +67,13 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Bienvenidos</p>
-        <h2>Jelajahi Barbershop Kami</h2>
+        <h2 data-i18n="explore.title">Jelajahi Barbershop Kami</h2>
       </div>
       <div class="explore-grid">
-        <a href="layanan.html" class="explore-card"><span class="explore-num">01</span><h3>Layanan &amp; Harga</h3><p class="muted">Haircut, shaving, coloring, hair tattoo, dan lainnya.</p><span class="explore-link">Lihat Layanan →</span></a>
-        <a href="model.html" class="explore-card"><span class="explore-num">02</span><h3>Model Potongan</h3><p class="muted">Slick back, pompadour, side part, dan gaya American gangster lainnya.</p><span class="explore-link">Lihat Model →</span></a>
-        <a href="barber.html" class="explore-card"><span class="explore-num">03</span><h3>Barber Kami</h3><p class="muted">Kenali barber berpengalaman yang siap merapikan gayamu.</p><span class="explore-link">Kenali Barber →</span></a>
-        <a href="kontak.html" class="explore-card"><span class="explore-num">04</span><h3>Lokasi &amp; Jam Buka</h3><p class="muted">Temukan alamat, peta, dan jam operasional kami.</p><span class="explore-link">Lihat Lokasi →</span></a>
+        <a href="layanan.html" class="explore-card"><span class="explore-num">01</span><h3 data-i18n="explore.services.title">Layanan &amp; Harga</h3><p class="muted" data-i18n="explore.services.desc">Haircut, shaving, coloring, hair tattoo, dan lainnya.</p><span class="explore-link" data-i18n="explore.services.link">Lihat Layanan →</span></a>
+        <a href="model.html" class="explore-card"><span class="explore-num">02</span><h3 data-i18n="explore.styles.title">Model Potongan</h3><p class="muted" data-i18n="explore.styles.desc">Slick back, pompadour, side part, dan gaya American gangster lainnya.</p><span class="explore-link" data-i18n="explore.styles.link">Lihat Model →</span></a>
+        <a href="barber.html" class="explore-card"><span class="explore-num">03</span><h3 data-i18n="explore.barbers.title">Barber Kami</h3><p class="muted" data-i18n="explore.barbers.desc">Kenali barber berpengalaman yang siap merapikan gayamu.</p><span class="explore-link" data-i18n="explore.barbers.link">Kenali Barber →</span></a>
+        <a href="kontak.html" class="explore-card"><span class="explore-num">04</span><h3 data-i18n="explore.contact.title">Lokasi &amp; Jam Buka</h3><p class="muted" data-i18n="explore.contact.desc">Temukan alamat, peta, dan jam operasional kami.</p><span class="explore-link" data-i18n="explore.contact.link">Lihat Lokasi →</span></a>
       </div>
     </div>
   </section>
@@ -78,7 +82,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <a href="index.html" class="logo"><span class="logo-icon" aria-hidden="true"></span> <span data-shop-name>Gentleman's Cut</span></a>
-      <p>&copy; <span id="year"></span> <span data-shop-name>Gentleman's Cut</span>. Semua hak dilindungi.</p>
+      <p>&copy; <span id="year"></span> <span data-shop-name>Gentleman's Cut</span>. <span data-i18n="footer.rights">Semua hak dilindungi.</span></p>
     </div>
   </footer>
 
@@ -88,6 +92,7 @@
   </a>
 
   <script src="data.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -55,6 +55,13 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
 .nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--primary); transition: .25s; }
 .nav-links a:not(.btn):hover::after, .nav-links a.active::after { width: 100%; }
 .nav-links a.active { color: var(--gold); }
+/* tombol bahasa ID | EN */
+.nav-links { margin-left: auto; }
+.lang-switch { display: flex; margin-left: 1.3rem; border: 1px solid var(--gold); border-radius: 4px; overflow: hidden; flex: none; }
+.lang-switch button { background: none; border: 0; color: var(--gold); font-family: var(--font-head); font-size: .85rem; letter-spacing: .1em; padding: .38rem .6rem; cursor: pointer; transition: .2s; }
+.lang-switch button + button { border-left: 1px solid var(--gold); }
+.lang-switch button:hover { background: rgba(214,173,94,.15); }
+.lang-switch button.active { background: var(--gold); color: var(--bg); }
 .hamburger { display: none; background: none; border: 0; cursor: pointer; padding: 6px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: .3s; }
 .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -208,7 +215,8 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
   .hamburger { display: block; }
   .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; max-width: 300px; background: var(--bg-alt); border-left: 2px solid var(--primary); flex-direction: column; justify-content: center; gap: 2rem; transition: right .35s; box-shadow: -10px 0 30px rgba(0,0,0,.6); }
   .nav-links.open { right: 0; }
-  .hamburger { position: relative; z-index: 110; }
+  .hamburger { position: relative; z-index: 110; margin-left: .8rem; }
+  .lang-switch { margin-left: auto; position: relative; z-index: 110; }
   .section { padding: 70px 0; }
   .hero-overlay { background: linear-gradient(180deg, rgba(13,12,11,.85), rgba(13,12,11,.75)); }
   .hero-stats { gap: 1.5rem; }
