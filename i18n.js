@@ -11,7 +11,6 @@ const I18N = {
     "nav.barbers": "Barber",
     "nav.styles": "Model",
     "nav.contact": "Kontak",
-    "nav.book": "Booking",
 
     "hero.book": "Booking Sekarang",
     "hero.services": "Lihat Layanan",
@@ -20,7 +19,6 @@ const I18N = {
     "hero.rating": "Rating Google",
 
     "promo.title": "Promo Bulan Ini",
-    "promo.cta": "Ambil Promo",
     "marquee.label": "Model potongan rambut",
 
     "explore.title": "Jelajahi Barbershop Kami",
@@ -76,7 +74,6 @@ const I18N = {
     "nav.barbers": "Barbers",
     "nav.styles": "Styles",
     "nav.contact": "Contact",
-    "nav.book": "Book Now",
 
     "hero.book": "Book Now",
     "hero.services": "View Services",
@@ -85,7 +82,6 @@ const I18N = {
     "hero.rating": "Google Rating",
 
     "promo.title": "This Month's Promo",
-    "promo.cta": "Claim Promo",
     "marquee.label": "Haircut styles",
 
     "explore.title": "Explore Our Barbershop",
