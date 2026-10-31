@@ -12,7 +12,6 @@ const I18N = {
     "nav.styles": "Model",
     "nav.contact": "Kontak",
 
-    "hero.book": "Booking Sekarang",
     "hero.services": "Lihat Layanan",
     "hero.years": "Tahun Berdiri",
     "hero.clients": "Pelanggan",
@@ -75,7 +74,6 @@ const I18N = {
     "nav.styles": "Styles",
     "nav.contact": "Contact",
 
-    "hero.book": "Book Now",
     "hero.services": "View Services",
     "hero.years": "Years Open",
     "hero.clients": "Happy Clients",
