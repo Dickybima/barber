@@ -50,25 +50,26 @@ const BARBERS = [
 ];
 
 // MODEL POTONGAN AMERICAN GANGSTER
-// Foto contoh dari Unsplash — ganti dengan foto pelanggan/model kamu sendiri (misal "img/slickback.jpg")
-const u = (id) => `https://unsplash.com/photos/${id}/download?force=true&w=800`;
+// Foto SEMENTARA dari Unsplash (foto barbershop umum) — ganti dengan foto model/pelanggan kamu
+// sendiri dengan potongan tersebut, misal: photo: "img/slickback.jpg"
+const u = (id) => `https://images.unsplash.com/${id}?w=800&q=80&auto=format&fit=crop`;
 const STYLES = [
   { name: "Slick Back", era: "Era Prohibition 1920-an",
     desc: "Rambut atas disisir rapi ke belakang dengan pomade kilap tinggi, sisi taper pendek. Ikon bos mafia Chicago.",
-    photo: u("ymkRPqPmRew") },
+    photo: u("photo-1599351431202-1e0f0137899a") },
   { name: "Gentleman Side Part", era: "Mafia Klasik 1940-an",
     desc: "Belahan samping tegas (hard part) dengan razor, sisi rapi, finishing pomade semi-kilap. Cocok dengan setelan jas.",
-    photo: u("rjA_c6lb9a0") },
+    photo: u("photo-1503951914875-452162b0f3f1") },
   { name: "Pompadour", era: "Greaser 1950-an",
     desc: "Volume tinggi di bagian depan disisir ke atas & belakang, sisi pendek. Gaya rock 'n roll yang berani.",
-    photo: u("8wFDFCnqvfI") },
+    photo: u("photo-1622286342621-4bd786c2447c") },
   { name: "Prohibition Undercut", era: "Gangster 1920-an",
     desc: "Atas panjang disisir ke belakang, sisi & belakang dicukur sangat pendek tanpa gradasi (disconnected).",
-    photo: u("PCyHNwzLQ9g") },
+    photo: u("photo-1621605815971-fbc98d665033") },
   { name: "Ducktail", era: "Rockabilly 1950-an",
     desc: "Sisi disisir ke belakang hingga bertemu di tengkuk membentuk ekor bebek. Klasik, rapi, penuh karakter.",
-    photo: u("YtB9Q7GoOuk") },
+    photo: u("photo-1605497788044-5a32c7078486") },
   { name: "Cholo Buzz", era: "Chicano LA",
     desc: "Buzz cut super pendek & bersih dengan garis rambut tajam pakai pisau cukur. Simpel, tegas, khas Chicano.",
-    photo: u("V3tmE7D2P_M") },
+    photo: u("photo-1585747860715-2ba37e788b70") },
 ];
