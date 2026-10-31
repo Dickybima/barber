@@ -7,8 +7,8 @@
 const SHOP = {
   name: "Gentleman's Cut",
   since: "2015",
-  tagline: "Barbershop bernuansa tropis Bali — potongan presisi oleh barber lokal berpengalaman, sambil bersantai ditemani es kelapa muda.",
-  promo: "Gratis es kelapa muda + diskon 15% untuk kunjungan pertama. Welcome to Bali!",
+  tagline: "Barbershop bergaya Chicano — fade tajam, slick back klasik, dan cukur pisau tradisional oleh barber berpengalaman. Old school vibes, fresh cuts.",
+  promo: "Gratis hot towel shave untuk setiap Premium Haircut + diskon 15% kunjungan pertama. ¡Vámonos!",
 
   // Nomor WhatsApp format internasional TANPA tanda + / spasi (62 = Indonesia)
   whatsapp: "6281234567890",
@@ -41,20 +41,20 @@ const SERVICES = [
 ];
 
 const BARBERS = [
-  { name: "Made Wirawan",  role: "Head Barber",   exp: "10 tahun", specialty: "Fade & Pompadour",
+  { name: "Made Wirawan",  role: "Head Barber",   exp: "10 tahun", specialty: "Slick Back & Skin Fade",
     photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80" },
-  { name: "Komang Adi Putra", role: "Senior Barber", exp: "7 tahun",  specialty: "Textured Crop & Undercut",
+  { name: "Komang Adi Putra", role: "Senior Barber", exp: "7 tahun",  specialty: "Pompadour & Taper",
     photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80" },
-  { name: "Ketut Arya", role: "Barber",        exp: "4 tahun",  specialty: "Hair Tattoo & Coloring",
+  { name: "Ketut Arya", role: "Barber",        exp: "4 tahun",  specialty: "Razor Line & Hair Tattoo",
     photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" },
 ];
 
 // Ganti dengan foto hasil potongan barbershop kamu sendiri (bisa file lokal, misal "img/galeri1.jpg")
 const GALLERY = [
   { src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80", caption: "Mid Fade" },
-  { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80", caption: "Classic Cut" },
+  { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80", caption: "Slick Back" },
   { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80", caption: "Beard Trim" },
-  { src: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80", caption: "Suasana Barbershop" },
+  { src: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80", caption: "La Barbería" },
   { src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80", caption: "Skin Fade" },
   { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80", caption: "Styling" },
 ];
