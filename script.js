@@ -63,7 +63,7 @@ const waLink = (text) => `https://wa.me/${SHOP.whatsapp}?text=${encodeURICompone
 $("#stylesGrid").innerHTML = STYLES.map((m, i) => `
   <article class="style-card">
     <figure class="style-photo" data-index="${i}">
-      <img src="${esc(m.photo)}" alt="Model potongan ${esc(m.name)}" loading="lazy" onerror="this.parentNode.classList.add('noimg')" />
+      <img src="${esc(m.photos[0])}" alt="Model potongan ${esc(m.name)}" loading="lazy" data-try="0" />
       <span class="style-fallback">Foto segera hadir</span>
       <span class="style-num">No. ${String(i + 1).padStart(2, "0")}</span>
     </figure>
@@ -80,11 +80,22 @@ const lightbox = document.createElement("div");
 lightbox.className = "lightbox";
 lightbox.innerHTML = `<button aria-label="Tutup">&times;</button><img alt="" /><p></p>`;
 document.body.appendChild(lightbox);
+// Jika foto gagal dimuat, coba foto cadangan berikutnya; jika habis, tampilkan placeholder
+$("#stylesGrid").querySelectorAll(".style-photo img").forEach((img) => {
+  img.addEventListener("error", () => {
+    const fig = img.parentNode;
+    const list = STYLES[fig.dataset.index].photos;
+    const next = Number(img.dataset.try) + 1;
+    if (next < list.length) { img.dataset.try = next; img.src = list[next]; }
+    else fig.classList.add("noimg");
+  });
+});
+
 $("#stylesGrid").addEventListener("click", (e) => {
   const item = e.target.closest(".style-photo");
   if (!item || item.classList.contains("noimg")) return;
   const m = STYLES[item.dataset.index];
-  lightbox.querySelector("img").src = m.photo;
+  lightbox.querySelector("img").src = item.querySelector("img").src;
   lightbox.querySelector("p").textContent = m.name;
   lightbox.classList.add("open");
 });

@@ -50,26 +50,27 @@ const BARBERS = [
 ];
 
 // MODEL POTONGAN AMERICAN GANGSTER
-// Foto SEMENTARA dari Unsplash (foto barbershop umum) — ganti dengan foto model/pelanggan kamu
-// sendiri dengan potongan tersebut, misal: photo: "img/slickback.jpg"
-const u = (id) => `https://images.unsplash.com/${id}?w=800&q=80&auto=format&fit=crop`;
+// Foto contoh gratis dari Pexels (https://www.pexels.com). Setiap model punya beberapa foto:
+// jika foto pertama gagal dimuat, website otomatis mencoba foto berikutnya.
+// Ganti dengan foto pelanggan/model kamu sendiri, misal: photos: ["img/slickback.jpg"]
+const px = (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800`;
 const STYLES = [
   { name: "Slick Back", era: "Era Prohibition 1920-an",
     desc: "Rambut atas disisir rapi ke belakang dengan pomade kilap tinggi, sisi taper pendek. Ikon bos mafia Chicago.",
-    photo: u("photo-1599351431202-1e0f0137899a") },
+    photos: [px(5465330), px(12706272)] },
   { name: "Gentleman Side Part", era: "Mafia Klasik 1940-an",
     desc: "Belahan samping tegas (hard part) dengan razor, sisi rapi, finishing pomade semi-kilap. Cocok dengan setelan jas.",
-    photo: u("photo-1503951914875-452162b0f3f1") },
+    photos: [px(33730878), px(5985168)] },
   { name: "Pompadour", era: "Greaser 1950-an",
     desc: "Volume tinggi di bagian depan disisir ke atas & belakang, sisi pendek. Gaya rock 'n roll yang berani.",
-    photo: u("photo-1622286342621-4bd786c2447c") },
+    photos: [px(7512659), px(20625560)] },
   { name: "Prohibition Undercut", era: "Gangster 1920-an",
     desc: "Atas panjang disisir ke belakang, sisi & belakang dicukur sangat pendek tanpa gradasi (disconnected).",
-    photo: u("photo-1621605815971-fbc98d665033") },
+    photos: [px(5337944), px(2076932)] },
   { name: "Ducktail", era: "Rockabilly 1950-an",
     desc: "Sisi disisir ke belakang hingga bertemu di tengkuk membentuk ekor bebek. Klasik, rapi, penuh karakter.",
-    photo: u("photo-1605497788044-5a32c7078486") },
+    photos: [px(27875829), px(9953160)] },
   { name: "Cholo Buzz", era: "Chicano LA",
     desc: "Buzz cut super pendek & bersih dengan garis rambut tajam pakai pisau cukur. Simpel, tegas, khas Chicano.",
-    photo: u("photo-1585747860715-2ba37e788b70") },
+    photos: [px(14783247), px(17095842), px(5236964)] },
 ];

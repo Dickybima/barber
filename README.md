@@ -16,7 +16,7 @@ Website landing page barbershop yang responsif (HP & desktop). Tombol booking la
 **Cukup edit file `data.js`** — nama toko, nomor WhatsApp, alamat, jam buka, layanan, harga, barber, dan model potongan (`STYLES`) ada di sana.
 
 - Nomor WhatsApp pakai format `62xxxxxxxxxx` (tanpa `+`, spasi, atau angka 0 di depan).
-- Untuk foto sendiri, buat folder `img/`, taruh fotonya di sana, lalu isi `photo`/`src` dengan misalnya `"img/barber1.jpg"`.
+- Untuk foto sendiri, buat folder `img/`, taruh fotonya di sana, lalu isi `photo` (barber) atau `photos` (model potongan) dengan misalnya `"img/barber1.jpg"`.
 - Warna & font tema (Chicano) ada di bagian atas `style.css` (`--primary`, `--gold`, `--bg`, `--font-gothic`, dll).
 - Teks statistik di hero (10+ tahun, 15rb+ pelanggan, 4.9★) ada di `index.html`.
 
