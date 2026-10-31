@@ -5,7 +5,7 @@ Website barbershop multi-halaman yang responsif (HP & desktop). Tombol booking l
 ## Halaman
 | File | Isi |
 |---|---|
-| `index.html` | Beranda: hero, promo, dan kartu menuju halaman lain |
+| `index.html` | Beranda: hero, strip foto model rambut berjalan, dan kartu menuju halaman lain |
 | `layanan.html` | Layanan & harga + promo |
 | `barber.html` | Profil barber |
 | `model.html` | Katalog model potongan American Gangster |

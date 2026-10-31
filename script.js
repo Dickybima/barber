@@ -41,6 +41,16 @@ const icon = (name) =>
 
 const clockIcon = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
 
+// Jika foto gagal dimuat, coba foto cadangan berikutnya; jika habis, beri class "noimg"
+function photoFallback(img, photos, box) {
+  img.dataset.try = 0;
+  img.addEventListener("error", () => {
+    const next = Number(img.dataset.try) + 1;
+    if (next < photos.length) { img.dataset.try = next; img.src = photos[next]; }
+    else box.classList.add("noimg");
+  });
+}
+
 /* ---------- Render semua teks sesuai bahasa ---------- */
 function render() {
   document.documentElement.lang = LANG;
@@ -49,6 +59,7 @@ function render() {
 
   // teks tetap dari i18n.js
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = ui(el.dataset.i18n)));
+  document.querySelectorAll("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", ui(el.dataset.i18nAria)));
   $("#hamburger")?.setAttribute("aria-label", ui("ui.menu"));
 
   // data toko
@@ -100,7 +111,7 @@ function render() {
     $("#stylesGrid").innerHTML = STYLES.map((m, i) => `
       <article class="style-card">
         <figure class="style-photo" data-index="${i}">
-          <img src="${esc(m.photos[0])}" alt="${esc(tr(m.name))}" loading="lazy" data-try="0" />
+          <img src="${esc(m.photos[0])}" alt="${esc(tr(m.name))}" loading="lazy" />
           <span class="style-fallback">${esc(ui("ui.photoSoon"))}</span>
           <span class="style-num">No. ${String(i + 1).padStart(2, "0")}</span>
         </figure>
@@ -112,16 +123,20 @@ function render() {
              href="${waLink(ui("wa.bookStyle", SHOP.name, tr(m.name)))}">${esc(ui("ui.bookStyle"))}</a>
         </div>
       </article>`).join("");
-    // Jika foto gagal dimuat, coba foto cadangan berikutnya; jika habis, tampilkan placeholder
-    $("#stylesGrid").querySelectorAll(".style-photo img").forEach((img) => {
-      img.addEventListener("error", () => {
-        const fig = img.parentNode;
-        const list = STYLES[fig.dataset.index].photos;
-        const next = Number(img.dataset.try) + 1;
-        if (next < list.length) { img.dataset.try = next; img.src = list[next]; }
-        else fig.classList.add("noimg");
-      });
-    });
+    $("#stylesGrid").querySelectorAll(".style-photo img").forEach((img) =>
+      photoFallback(img, STYLES[img.parentNode.dataset.index].photos, img.parentNode));
+  }
+
+  // Foto model berjalan (beranda): satu set + salinannya agar putaran tanpa jeda
+  if ($("#marqueeTrack")) {
+    const item = (m, hidden) => `
+      <a href="model.html" class="marquee-item"${hidden ? ' aria-hidden="true" tabindex="-1"' : ""}>
+        <img src="${esc(m.photos[0])}" alt="${hidden ? "" : esc(tr(m.name))}" loading="lazy" />
+        <span class="marquee-name">${esc(tr(m.name))}</span>
+      </a>`;
+    $("#marqueeTrack").innerHTML = STYLES.map((m) => item(m, false)).join("") + STYLES.map((m) => item(m, true)).join("");
+    $("#marqueeTrack").querySelectorAll(".marquee-item").forEach((a, i) =>
+      photoFallback(a.querySelector("img"), STYLES[i % STYLES.length].photos, a));
   }
 
   // Jam buka

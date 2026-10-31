@@ -140,6 +140,19 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
 .promo h3 { font-family: var(--font-gothic); text-transform: none; letter-spacing: 0; font-weight: 400; font-size: 2rem; margin-bottom: .2rem; }
 .promo p { color: #f5dcd8; }
 
+/* ============ FOTO MODEL BERJALAN (beranda) ============ */
+.marquee { overflow: hidden; padding: 1.4rem 0; background: var(--bandana) 0 0/60px, linear-gradient(135deg, var(--primary), var(--primary-dark)); border-block: 3px solid var(--gold); }
+.marquee-track { display: flex; width: max-content; animation: marquee 45s linear infinite; }
+.marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee-item { position: relative; flex: none; width: 220px; height: 290px; margin-right: 1rem; border-radius: 10px; overflow: hidden; border: 2px solid var(--gold); background: #1a1716; box-shadow: 0 8px 20px rgba(0,0,0,.35); }
+.marquee-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15); transition: .4s; }
+.marquee-item:hover img { filter: grayscale(0); transform: scale(1.06); }
+.marquee-item::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(13,12,11,.9)); pointer-events: none; }
+.marquee-name { position: absolute; left: 0; right: 0; bottom: .8rem; z-index: 1; text-align: center; font-family: var(--font-gothic); font-size: 1.5rem; color: var(--text); padding: 0 .5rem; }
+.marquee-item.noimg { background: var(--rose) center 40%/56px no-repeat, radial-gradient(circle at 50% 40%, #2a2321, #141110); }
+.marquee-item.noimg img { visibility: hidden; }
+
 /* ============ BARBER ============ */
 .barbers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; }
 .barber-card { background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); transition: .3s; }
@@ -205,6 +218,8 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .wa-float { animation: none; }
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
 }
 
 /* ============ RESPONSIVE ============ */
@@ -221,4 +236,6 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
   .hero-overlay { background: linear-gradient(180deg, rgba(13,12,11,.85), rgba(13,12,11,.75)); }
   .hero-stats { gap: 1.5rem; }
   .promo-inner { text-align: center; justify-content: center; }
+  .marquee-item { width: 160px; height: 215px; margin-right: .75rem; }
+  .marquee-name { font-size: 1.2rem; }
 }

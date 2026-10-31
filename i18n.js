@@ -21,6 +21,7 @@ const I18N = {
 
     "promo.title": "Promo Bulan Ini",
     "promo.cta": "Ambil Promo",
+    "marquee.label": "Model potongan rambut",
 
     "explore.title": "Jelajahi Barbershop Kami",
     "explore.services.title": "Layanan & Harga",
@@ -85,6 +86,7 @@ const I18N = {
 
     "promo.title": "This Month's Promo",
     "promo.cta": "Claim Promo",
+    "marquee.label": "Haircut styles",
 
     "explore.title": "Explore Our Barbershop",
     "explore.services.title": "Services & Prices",
