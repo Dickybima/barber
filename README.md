@@ -17,7 +17,7 @@ Website landing page barbershop yang responsif (HP & desktop). Tombol booking la
 
 - Nomor WhatsApp pakai format `62xxxxxxxxxx` (tanpa `+`, spasi, atau angka 0 di depan).
 - Untuk foto sendiri, buat folder `img/`, taruh fotonya di sana, lalu isi `photo`/`src` dengan misalnya `"img/barber1.jpg"`.
-- Warna tema ada di bagian atas `style.css` (`--gold`, `--bg`, dll).
+- Warna tema (nuansa Bali) ada di bagian atas `style.css` (`--primary`, `--green`, `--bg`, dll).
 - Teks statistik di hero (10+ tahun, 15rb+ pelanggan, 4.9★) ada di `index.html`.
 
 ## Cara Menjalankan

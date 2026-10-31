@@ -7,16 +7,16 @@
 const SHOP = {
   name: "Gentleman's Cut",
   since: "2015",
-  tagline: "Potongan presisi oleh barber berpengalaman, suasana nyaman, dan harga bersahabat.",
-  promo: "Diskon 20% untuk pelajar & mahasiswa setiap Senin–Kamis. Tunjukkan kartu pelajar!",
+  tagline: "Barbershop bernuansa tropis Bali — potongan presisi oleh barber lokal berpengalaman, sambil bersantai ditemani es kelapa muda.",
+  promo: "Gratis es kelapa muda + diskon 15% untuk kunjungan pertama. Welcome to Bali!",
 
   // Nomor WhatsApp format internasional TANPA tanda + / spasi (62 = Indonesia)
   whatsapp: "6281234567890",
   phoneDisplay: "0812-3456-7890",
-  instagram: "gentlemanscut.id",
-  address: "Jl. Sudirman No. 123, Jakarta Pusat",
+  instagram: "gentlemanscut.bali",
+  address: "Jl. Sunset Road No. 88, Seminyak, Badung, Bali",
   // Teks pencarian untuk Google Maps (bisa alamat atau nama tempat)
-  mapQuery: "Monas, Jakarta Pusat",
+  mapQuery: "Seminyak, Bali",
 
   // Jam buka. Kosongkan open/close jika tutup.
   hours: [
@@ -41,11 +41,11 @@ const SERVICES = [
 ];
 
 const BARBERS = [
-  { name: "Andi Pratama",  role: "Head Barber",   exp: "10 tahun", specialty: "Fade & Pompadour",
+  { name: "Made Wirawan",  role: "Head Barber",   exp: "10 tahun", specialty: "Fade & Pompadour",
     photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80" },
-  { name: "Rizky Maulana", role: "Senior Barber", exp: "7 tahun",  specialty: "Textured Crop & Undercut",
+  { name: "Komang Adi Putra", role: "Senior Barber", exp: "7 tahun",  specialty: "Textured Crop & Undercut",
     photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80" },
-  { name: "Dimas Saputra", role: "Barber",        exp: "4 tahun",  specialty: "Hair Tattoo & Coloring",
+  { name: "Ketut Arya", role: "Barber",        exp: "4 tahun",  specialty: "Hair Tattoo & Coloring",
     photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" },
 ];
 

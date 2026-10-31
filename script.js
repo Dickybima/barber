@@ -53,7 +53,7 @@ $("#barbersGrid").innerHTML = BARBERS.map((b) => `
     <div class="barber-photo"><img src="${esc(b.photo)}" alt="${esc(b.name)}" loading="lazy" onerror="this.style.visibility='hidden'" /></div>
     <div class="barber-body">
       <h3>${esc(b.name)}</h3>
-      <p class="gold">${esc(b.role)}</p>
+      <p class="accent">${esc(b.role)}</p>
       <p class="muted">Pengalaman ${esc(b.exp)} · ${esc(b.specialty)}</p>
     </div>
   </article>`).join("");
