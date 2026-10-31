@@ -4,22 +4,24 @@ const rupiah = (n) => "Rp " + n.toLocaleString("id-ID");
 const $ = (sel) => document.querySelector(sel);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-/* ---------- Isi data toko ---------- */
-document.querySelectorAll("[data-shop-name]").forEach((el) => (el.textContent = SHOP.name));
-$("[data-since]").textContent = SHOP.since;
-$("[data-tagline]").textContent = SHOP.tagline;
-$("[data-promo]").textContent = SHOP.promo;
-$("[data-address]").textContent = SHOP.address;
-$("[data-phone]").textContent = SHOP.phoneDisplay;
-$("[data-phone-link]").href = "tel:+" + SHOP.whatsapp;
-$("[data-instagram]").textContent = "@" + SHOP.instagram;
-$("[data-instagram-link]").href = "https://instagram.com/" + SHOP.instagram;
-$("#waFloat").href = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("Halo " + SHOP.name + ", saya mau tanya.")}`;
-document.querySelectorAll("[data-wa]").forEach((a) =>
-  (a.href = `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent("Halo " + SHOP.name + ", saya mau booking potong rambut.")}`));
-$("#mapFrame").src = "https://maps.google.com/maps?q=" + encodeURIComponent(SHOP.mapQuery) + "&output=embed";
-$("#year").textContent = new Date().getFullYear();
-document.title = SHOP.name + " Barbershop";
+/* ---------- Isi data toko (hanya jika elemennya ada di halaman ini) ---------- */
+const setText = (sel, val) => document.querySelectorAll(sel).forEach((el) => (el.textContent = val));
+const setHref = (sel, val) => document.querySelectorAll(sel).forEach((el) => (el.href = val));
+const waLink = (text) => `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(text)}`;
+
+setText("[data-shop-name]", SHOP.name);
+setText("[data-since]", SHOP.since);
+setText("[data-tagline]", SHOP.tagline);
+setText("[data-promo]", SHOP.promo);
+setText("[data-address]", SHOP.address);
+setText("[data-phone]", SHOP.phoneDisplay);
+setHref("[data-phone-link]", "tel:+" + SHOP.whatsapp);
+setText("[data-instagram]", "@" + SHOP.instagram);
+setHref("[data-instagram-link]", "https://instagram.com/" + SHOP.instagram);
+setHref("#waFloat", waLink(`Halo ${SHOP.name}, saya mau tanya.`));
+setHref("[data-wa]", waLink(`Halo ${SHOP.name}, saya mau booking potong rambut.`));
+if ($("#mapFrame")) $("#mapFrame").src = "https://maps.google.com/maps?q=" + encodeURIComponent(SHOP.mapQuery) + "&output=embed";
+setText("#year", new Date().getFullYear());
 
 /* ---------- Ikon layanan (SVG garis) ---------- */
 const ICONS = {
@@ -36,7 +38,7 @@ const icon = (name) =>
   `<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ICONS.scissors}</svg>`;
 
 /* ---------- Layanan ---------- */
-$("#servicesGrid").innerHTML = SERVICES.map((s) => `
+if ($("#servicesGrid")) $("#servicesGrid").innerHTML = SERVICES.map((s) => `
   <article class="service-card">
     <div class="service-icon">${icon(s.icon)}</div>
     <h3>${esc(s.name)}</h3>
@@ -48,7 +50,7 @@ $("#servicesGrid").innerHTML = SERVICES.map((s) => `
   </article>`).join("");
 
 /* ---------- Barber ---------- */
-$("#barbersGrid").innerHTML = BARBERS.map((b) => `
+if ($("#barbersGrid")) $("#barbersGrid").innerHTML = BARBERS.map((b) => `
   <article class="barber-card">
     <div class="barber-photo"><img src="${esc(b.photo)}" alt="${esc(b.name)}" loading="lazy" onerror="this.style.visibility='hidden'" /></div>
     <div class="barber-body">
@@ -58,8 +60,8 @@ $("#barbersGrid").innerHTML = BARBERS.map((b) => `
     </div>
   </article>`).join("");
 
+if ($("#stylesGrid")) {
 /* ---------- Model potongan + lightbox ---------- */
-const waLink = (text) => `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(text)}`;
 $("#stylesGrid").innerHTML = STYLES.map((m, i) => `
   <article class="style-card">
     <figure class="style-photo" data-index="${i}">
@@ -103,10 +105,11 @@ lightbox.addEventListener("click", (e) => {
   if (e.target !== lightbox.querySelector("img")) lightbox.classList.remove("open");
 });
 document.addEventListener("keydown", (e) => e.key === "Escape" && lightbox.classList.remove("open"));
+}
 
 /* ---------- Jam buka ---------- */
 const todayIdx = (new Date().getDay() + 6) % 7; // Senin = 0
-$("#hoursTable").innerHTML = SHOP.hours.map((h, i) => `
+if ($("#hoursTable")) $("#hoursTable").innerHTML = SHOP.hours.map((h, i) => `
   <tr class="${i === todayIdx ? "today" : ""}">
     <td>${esc(h.day)}</td>
     <td>${h.open ? `${esc(h.open)} – ${esc(h.close)}` : "Tutup"}</td>
@@ -130,5 +133,5 @@ navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
 }, { threshold: 0.12 });
-document.querySelectorAll(".section-head, .service-card, .barber-card, .style-card, .contact-info, .map")
+document.querySelectorAll(".section-head, .service-card, .barber-card, .style-card, .explore-card, .contact-info, .map")
   .forEach((el) => { el.classList.add("reveal"); io.observe(el); });

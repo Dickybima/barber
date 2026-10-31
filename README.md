@@ -1,6 +1,17 @@
 # 💈 Website Barbershop
 
-Website landing page barbershop yang responsif (HP & desktop). Tombol booking langsung membuka chat WhatsApp.
+Website barbershop multi-halaman yang responsif (HP & desktop). Tombol booking langsung membuka chat WhatsApp.
+
+## Halaman
+| File | Isi |
+|---|---|
+| `index.html` | Beranda: hero, promo, dan kartu menuju halaman lain |
+| `layanan.html` | Layanan & harga + promo |
+| `barber.html` | Profil barber |
+| `model.html` | Katalog model potongan American Gangster |
+| `kontak.html` | Alamat, kontak, jam buka, Google Maps |
+
+Navbar & footer ada di setiap file HTML — jika menambah/mengubah menu, ubah di kelima file.
 
 ## Fitur
 - Beranda (hero) dengan tombol booking

@@ -53,7 +53,8 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
 .nav-links { display: flex; align-items: center; gap: 1.7rem; }
 .nav-links a:not(.btn) { font-family: var(--font-head); text-transform: uppercase; letter-spacing: .1em; font-size: .95rem; position: relative; }
 .nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--primary); transition: .25s; }
-.nav-links a:not(.btn):hover::after { width: 100%; }
+.nav-links a:not(.btn):hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a.active { color: var(--gold); }
 .hamburger { display: none; background: none; border: 0; cursor: pointer; padding: 6px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: .3s; }
 .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -86,6 +87,31 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
   background: var(--rose) center/28px no-repeat,
               linear-gradient(var(--gold), var(--gold)) left center/58px 1.5px no-repeat,
               linear-gradient(var(--gold), var(--gold)) right center/58px 1.5px no-repeat; }
+
+/* ============ JUDUL HALAMAN (halaman selain beranda) ============ */
+.page-banner { position: relative; padding: 150px 0 70px; text-align: center; background: #111 url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1800&q=80") center/cover no-repeat; border-bottom: 3px solid var(--primary); }
+.page-banner::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,12,11,.88), rgba(13,12,11,.78)); backdrop-filter: grayscale(1); -webkit-backdrop-filter: grayscale(1); }
+.page-banner-content { position: relative; }
+.page-banner h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); }
+.page-banner h1::after { content: ""; display: block; width: 160px; height: 28px; margin: .6rem auto 0;
+  background: var(--rose) center/28px no-repeat,
+              linear-gradient(var(--gold), var(--gold)) left center/58px 1.5px no-repeat,
+              linear-gradient(var(--gold), var(--gold)) right center/58px 1.5px no-repeat; }
+.breadcrumb { margin-top: .8rem; font-family: var(--font-head); text-transform: uppercase; letter-spacing: .15em; font-size: .85rem; color: var(--muted); }
+.breadcrumb a { color: var(--gold); }
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb span { margin: 0 .4rem; }
+.section-head:not(:has(h2)) { margin-bottom: 2.5rem; }
+
+/* ============ JELAJAHI (beranda) ============ */
+.explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.explore-card { position: relative; display: flex; flex-direction: column; gap: .5rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem 1.8rem; transition: .3s; overflow: hidden; }
+.explore-card:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: 0 14px 34px rgba(0,0,0,.5); }
+.explore-num { font-family: var(--font-gothic); font-size: 2.6rem; color: var(--primary); line-height: 1; }
+.explore-card h3 { font-size: 1.25rem; }
+.explore-card p { flex: 1; font-size: .92rem; }
+.explore-link { font-family: var(--font-head); text-transform: uppercase; letter-spacing: .1em; font-size: .9rem; color: var(--gold); }
+.explore-card:hover .explore-link { color: var(--primary); }
 
 /* ============ LAYANAN ============ */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
