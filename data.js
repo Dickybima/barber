@@ -57,9 +57,3 @@ const GALLERY = [
   { src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80", caption: "Skin Fade" },
   { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80", caption: "Styling" },
 ];
-
-const TESTIMONIALS = [
-  { name: "Fajar H.",  rating: 5, text: "Potongannya rapi banget, barbernya ngerti mau saya padahal cuma kasih foto. Langganan terus!" },
-  { name: "Kevin S.",  rating: 5, text: "Tempatnya nyaman, ada kopi gratis. Booking via WA gampang, datang langsung dikerjain." },
-  { name: "Bagus W.",  rating: 4, text: "Premium haircut-nya worth it, pijat kepalanya bikin rileks. Harga masuk akal." },
-];

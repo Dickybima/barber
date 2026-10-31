@@ -108,13 +108,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .lightbox p { margin-top: 1rem; }
 .lightbox button { position: absolute; top: 16px; right: 22px; background: none; border: 0; color: #fff; font-size: 2.5rem; cursor: pointer; }
 
-/* ============ TESTIMONI ============ */
-.testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.testi-card { background: var(--card); border-radius: var(--radius); padding: 2rem; border-left: 4px solid var(--gold); }
-.stars { color: var(--gold); letter-spacing: 3px; margin-bottom: .8rem; }
-.testi-card p { font-style: italic; color: #ddd6ca; margin-bottom: 1rem; }
-.testi-card cite { font-style: normal; font-weight: 600; color: var(--gold); }
-
 /* ============ KONTAK ============ */
 .contact-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; }
 .contact-info h2 { margin-bottom: 1.5rem; }

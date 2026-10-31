@@ -68,14 +68,6 @@ lightbox.addEventListener("click", (e) => {
 });
 document.addEventListener("keydown", (e) => e.key === "Escape" && lightbox.classList.remove("open"));
 
-/* ---------- Testimoni ---------- */
-$("#testiGrid").innerHTML = TESTIMONIALS.map((t) => `
-  <blockquote class="testi-card">
-    <div class="stars">${"★".repeat(t.rating)}${"☆".repeat(5 - t.rating)}</div>
-    <p>“${esc(t.text)}”</p>
-    <cite>— ${esc(t.name)}</cite>
-  </blockquote>`).join("");
-
 /* ---------- Jam buka ---------- */
 const todayIdx = (new Date().getDay() + 6) % 7; // Senin = 0
 $("#hoursTable").innerHTML = SHOP.hours.map((h, i) => `
@@ -102,5 +94,5 @@ navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
 }, { threshold: 0.12 });
-document.querySelectorAll(".section-head, .service-card, .barber-card, .gallery-item, .testi-card, .contact-info, .map")
+document.querySelectorAll(".section-head, .service-card, .barber-card, .gallery-item, .contact-info, .map")
   .forEach((el) => { el.classList.add("reveal"); io.observe(el); });
