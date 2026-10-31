@@ -1,6 +1,6 @@
 /* =========================================================
    DATA BARBERSHOP — UBAH SEMUA DATA DI FILE INI SAJA
-   Semua teks, harga, barber, galeri, dan kontak di website
+   Semua teks, harga, barber, model potongan, dan kontak di website
    diambil dari sini, jadi kamu tidak perlu mengedit HTML.
    ========================================================= */
 
@@ -49,12 +49,26 @@ const BARBERS = [
     photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" },
 ];
 
-// Ganti dengan foto hasil potongan barbershop kamu sendiri (bisa file lokal, misal "img/galeri1.jpg")
-const GALLERY = [
-  { src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80", caption: "Mid Fade" },
-  { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80", caption: "Slick Back" },
-  { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80", caption: "Beard Trim" },
-  { src: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80", caption: "La Barbería" },
-  { src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80", caption: "Skin Fade" },
-  { src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80", caption: "Styling" },
+// MODEL POTONGAN AMERICAN GANGSTER
+// Foto contoh dari Unsplash — ganti dengan foto pelanggan/model kamu sendiri (misal "img/slickback.jpg")
+const u = (id) => `https://unsplash.com/photos/${id}/download?force=true&w=800`;
+const STYLES = [
+  { name: "Slick Back", era: "Era Prohibition 1920-an",
+    desc: "Rambut atas disisir rapi ke belakang dengan pomade kilap tinggi, sisi taper pendek. Ikon bos mafia Chicago.",
+    photo: u("ymkRPqPmRew") },
+  { name: "Gentleman Side Part", era: "Mafia Klasik 1940-an",
+    desc: "Belahan samping tegas (hard part) dengan razor, sisi rapi, finishing pomade semi-kilap. Cocok dengan setelan jas.",
+    photo: u("rjA_c6lb9a0") },
+  { name: "Pompadour", era: "Greaser 1950-an",
+    desc: "Volume tinggi di bagian depan disisir ke atas & belakang, sisi pendek. Gaya rock 'n roll yang berani.",
+    photo: u("8wFDFCnqvfI") },
+  { name: "Prohibition Undercut", era: "Gangster 1920-an",
+    desc: "Atas panjang disisir ke belakang, sisi & belakang dicukur sangat pendek tanpa gradasi (disconnected).",
+    photo: u("PCyHNwzLQ9g") },
+  { name: "Ducktail", era: "Rockabilly 1950-an",
+    desc: "Sisi disisir ke belakang hingga bertemu di tengkuk membentuk ekor bebek. Klasik, rapi, penuh karakter.",
+    photo: u("YtB9Q7GoOuk") },
+  { name: "Cholo Buzz", era: "Chicano LA",
+    desc: "Buzz cut super pendek & bersih dengan garis rambut tajam pakai pisau cukur. Simpel, tegas, khas Chicano.",
+    photo: u("V3tmE7D2P_M") },
 ];

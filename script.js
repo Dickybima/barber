@@ -58,23 +58,34 @@ $("#barbersGrid").innerHTML = BARBERS.map((b) => `
     </div>
   </article>`).join("");
 
-/* ---------- Galeri + lightbox ---------- */
-$("#galleryGrid").innerHTML = GALLERY.map((g, i) => `
-  <figure class="gallery-item" data-index="${i}">
-    <img src="${esc(g.src)}" alt="${esc(g.caption)}" loading="lazy" onerror="this.style.visibility='hidden'" />
-    <figcaption>${esc(g.caption)}</figcaption>
-  </figure>`).join("");
+/* ---------- Model potongan + lightbox ---------- */
+const waLink = (text) => `https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(text)}`;
+$("#stylesGrid").innerHTML = STYLES.map((m, i) => `
+  <article class="style-card">
+    <figure class="style-photo" data-index="${i}">
+      <img src="${esc(m.photo)}" alt="Model potongan ${esc(m.name)}" loading="lazy" onerror="this.parentNode.classList.add('noimg')" />
+      <span class="style-fallback">Foto segera hadir</span>
+      <span class="style-num">No. ${String(i + 1).padStart(2, "0")}</span>
+    </figure>
+    <div class="style-body">
+      <p class="style-era">${esc(m.era)}</p>
+      <h3>${esc(m.name)}</h3>
+      <p class="muted">${esc(m.desc)}</p>
+      <a class="btn btn-outline btn-sm" target="_blank" rel="noopener"
+         href="${waLink(`Halo ${SHOP.name}, saya mau booking potong rambut model ${m.name}.`)}">Booking Model Ini</a>
+    </div>
+  </article>`).join("");
 
 const lightbox = document.createElement("div");
 lightbox.className = "lightbox";
 lightbox.innerHTML = `<button aria-label="Tutup">&times;</button><img alt="" /><p></p>`;
 document.body.appendChild(lightbox);
-$("#galleryGrid").addEventListener("click", (e) => {
-  const item = e.target.closest(".gallery-item");
-  if (!item) return;
-  const g = GALLERY[item.dataset.index];
-  lightbox.querySelector("img").src = g.src;
-  lightbox.querySelector("p").textContent = g.caption;
+$("#stylesGrid").addEventListener("click", (e) => {
+  const item = e.target.closest(".style-photo");
+  if (!item || item.classList.contains("noimg")) return;
+  const m = STYLES[item.dataset.index];
+  lightbox.querySelector("img").src = m.photo;
+  lightbox.querySelector("p").textContent = m.name;
   lightbox.classList.add("open");
 });
 lightbox.addEventListener("click", (e) => {
@@ -108,5 +119,5 @@ navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
 }, { threshold: 0.12 });
-document.querySelectorAll(".section-head, .service-card, .barber-card, .gallery-item, .contact-info, .map")
+document.querySelectorAll(".section-head, .service-card, .barber-card, .style-card, .contact-info, .map")
   .forEach((el) => { el.classList.add("reveal"); io.observe(el); });

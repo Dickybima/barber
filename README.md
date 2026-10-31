@@ -7,13 +7,13 @@ Website landing page barbershop yang responsif (HP & desktop). Tombol booking la
 - Daftar layanan & harga
 - Banner promo
 - Profil barber
-- Galeri hasil potongan (klik untuk memperbesar)
+- Katalog model potongan American Gangster (foto bisa diperbesar + tombol booking per model)
 - Tombol booking langsung membuka chat WhatsApp
 - Lokasi Google Maps + tabel jam buka (hari ini ditandai)
 - Tombol WhatsApp melayang
 
 ## Cara Mengubah Data
-**Cukup edit file `data.js`** — nama toko, nomor WhatsApp, alamat, jam buka, layanan, harga, barber, dan galeri ada di sana.
+**Cukup edit file `data.js`** — nama toko, nomor WhatsApp, alamat, jam buka, layanan, harga, barber, dan model potongan (`STYLES`) ada di sana.
 
 - Nomor WhatsApp pakai format `62xxxxxxxxxx` (tanpa `+`, spasi, atau angka 0 di depan).
 - Untuk foto sendiri, buat folder `img/`, taruh fotonya di sana, lalu isi `photo`/`src` dengan misalnya `"img/barber1.jpg"`.

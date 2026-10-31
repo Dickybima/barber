@@ -119,13 +119,24 @@ h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); }
 .barber-body .accent { font-family: var(--font-script); font-size: 1.35rem; color: var(--gold); margin-bottom: .3rem; }
 .barber-body .muted { font-size: .88rem; }
 
-/* ============ GALERI ============ */
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-.gallery-item { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: var(--radius); cursor: zoom-in; background: #222; border: 1px solid var(--border); }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15); transition: .5s; }
-.gallery-item figcaption { position: absolute; inset: auto 0 0; padding: 2rem 1rem .9rem; background: linear-gradient(transparent, rgba(0,0,0,.9)); font-family: var(--font-script); font-size: 1.5rem; color: var(--gold); opacity: 0; transition: .3s; }
-.gallery-item:hover img { transform: scale(1.08); filter: grayscale(0); }
-.gallery-item:hover figcaption { opacity: 1; }
+/* ============ MODEL POTONGAN ============ */
+.styles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+.style-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: .3s; }
+.style-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 14px 34px rgba(0,0,0,.5); }
+.style-photo { position: relative; aspect-ratio: 4/5; overflow: hidden; cursor: zoom-in; background: #1a1716; }
+.style-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15); transition: .5s; }
+.style-card:hover .style-photo img { transform: scale(1.06); filter: grayscale(.15) contrast(1.05); }
+.style-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(13,12,11,.85)); pointer-events: none; }
+.style-num { position: absolute; top: 14px; left: 14px; z-index: 1; font-family: var(--font-head); letter-spacing: .15em; font-size: .78rem; color: var(--bg); background: var(--gold); padding: .2rem .6rem; border-radius: 3px; }
+.style-fallback { display: none; }
+.style-photo.noimg { cursor: default; background: var(--rose) center 38%/70px no-repeat, radial-gradient(circle at 50% 40%, #2a2321, #141110); }
+.style-photo.noimg img { display: none; }
+.style-photo.noimg .style-fallback { display: block; position: absolute; inset: auto 0 22%; text-align: center; font-family: var(--font-script); font-size: 1.5rem; color: var(--gold); z-index: 1; }
+.style-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: .35rem; flex: 1; }
+.style-era { font-family: var(--font-script); font-size: 1.35rem; color: var(--gold); line-height: 1.1; }
+.style-body h3 { font-family: var(--font-gothic); text-transform: none; letter-spacing: .01em; font-weight: 400; font-size: 2rem; line-height: 1.1; }
+.style-body .muted { font-size: .9rem; flex: 1; margin-bottom: .8rem; }
+.style-body .btn { align-self: flex-start; }
 .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.94); z-index: 200; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 16px; }
 .lightbox.open { display: flex; }
 .lightbox img { max-height: 80vh; max-width: 100%; border-radius: 10px; }
